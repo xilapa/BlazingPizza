@@ -23,8 +23,8 @@ app.UseRouting();
 app.MapRazorPages();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
-app.MapControllerRoute("default","{controller=Home}/{action=Index}/{id?}");
-
+// app.MapControllerRoute("default","{controller=Home}/{action=Index}/{id?}");
+app.MapControllers();
 await SeedData.InitializeAsync(app.Services);
 
 app.Run();
