@@ -1,6 +1,5 @@
 using BlazingPizza.Data;
 using BlazingPizza.Services;
-using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,10 +21,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapRazorPages();
-app.MapBlazorHub(opt =>
-{
-    opt.Transports = HttpTransportType.ServerSentEvents;
-});
+app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 // app.MapControllerRoute("default","{controller=Home}/{action=Index}/{id?}");
 app.MapControllers();
